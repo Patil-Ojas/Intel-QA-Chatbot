@@ -1,0 +1,27 @@
+1. https://www.intel.com/content/www/us/en/developer/articles/troubleshooting/oneapi-commercial-faq.html?wapkw=faq (35)
+
+2. https://www.intel.com/content/www/us/en/developer/platform/gaudi/faq.html?wapkw=faq (10)
+
+3. https://community.intel.com/t5/help/faqpage (57)
+
+4. https://www.intel.com/content/www/us/en/developer/get-help/faq.html?wapkw=faq (7)
+
+5. https://www.intel.com/content/www/us/en/supplier/resources/training/training-toolbox/documents/pop/pop-faq.html?wapkw=faq (14)
+
+6. https://www.intel.com/content/www/us/en/products/docs/storage/optane-dc-technology-faq.html?wapkw=faq (21)
+
+7. https://www.intel.com/content/www/us/en/developer/articles/troubleshooting/intel-mpi-library-licensing-faq.html?wapkw=faq (4)
+
+8. https://www.intel.com/content/www/us/en/events/on-event-series-faq.html?wapkw=faq (4)
+
+9. https://www.intel.com/content/www/us/en/developer/articles/troubleshooting/intel-integrated-performance-primitives-intel-ipp-threading-openmp-faq.html?wapkw=faq (7)
+
+10. https://www.intel.com/content/www/us/en/developer/get-help/faq-installation.html?wapkw=faq (17)
+
+11. https://docs.openvino.ai/2024/about-openvino/additional-resources/telemetry.html (6*)
+
+12. Questions to avoid hallucinations (35)
+
+13. More Intel Related Questions (100+)
+
+Following this Data Augmentation was performed on the data.
