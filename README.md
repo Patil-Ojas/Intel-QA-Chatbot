@@ -8,8 +8,11 @@ Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU and fine-tunin
 ## Team Aurora
 
 Harinee J
+
 Mhanjhusriee Baskar
+
 Amit
+
 Ojas
 
 to be edited
