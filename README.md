@@ -85,7 +85,7 @@ The performance of the model is also evaluated using ROUGE scores:
 
 -> ROUGE-L: 28.82
 
-##Demo Video Link: [Project Demo](https://youtu.be/1fdKZiXexSU)
+## Demo Video Link: [Project Demo](https://youtu.be/1fdKZiXexSU)
 
 
 ## :handshake: Team Aurora
