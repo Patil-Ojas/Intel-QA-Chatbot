@@ -80,7 +80,9 @@ The OpenVINO IR Format Model performs **56% faster** than the original model.
 The performance of the model is also evaluated using ROUGE scores:
 
 -> ROUGE-1: 35.23
+
 -> ROUGE-2: 18.97
+
 -> ROUGE-L: 28.82
 
 
