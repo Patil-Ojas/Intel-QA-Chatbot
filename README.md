@@ -1,64 +1,93 @@
-## Intel-QA-Chatbot
+# Intel Virtual Assistant Chatbot
 
-### Overview
+## :gear: Problem Statement 
+Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU and fine-tuning of LLM Models using Intel® OpenVINO™ 
 
-Intel-QA-Chatbot is a project developed by Team Aurora that focuses on creating and fine-tuning Large Language Models (LLMs) for efficient inference using Intel OpenVINO™ on Intel AI Laptops. The project demonstrates the potential of leveraging Intel hardware and the OpenVINO™ toolkit for optimizing model deployment and inference, specifically for question-answering tasks.
+## :detective: Our Solution:
+-> Fine-tuned Llama2-7b model on Intel Products and Services FAQ custom Dataset.
 
-### Problem Statement
+-> Comverted to OpenVINO IR Format for optimized inferencing, being 56% faster than the original model.
 
-The main objective of this project is to enable seamless execution of Generative AI (GenAI) models on Intel AI Laptops, with a focus on:
-- Efficiently running LLM inference on CPUs.
-- Fine-tuning LLM models using Intel® OpenVINO™.
 
-### Team Aurora
+## :tv: Demo ([Youtube](https://youtu.be/1fdKZiXexSU))
 
+<a href="https://youtu.be/1fdKZiXexSU" target="_blank">
+  <img src="https://github.com/user-attachments/assets/4bfd73b4-0e4b-4288-b8de-e7bfafc73fa7" width="700"/>
+</a>
+
+## :running_man: Workflow 
+![image](https://github.com/user-attachments/assets/2f5ebda2-d4be-470a-b2e1-1d2e0a8a0518)
+
+
+
+## :open_file_folder: Dataset
+The dataset was prepared by scraping data regarding Intel Product and Services from the Intel FAQ and help websites. The capability of this model is limited to the dataset used, which includes the below Intel Products
+
+#### 📊 Intel Products
+
+- 🚀 Intel Gaudi
+- 🔧 POP Intel
+- ⚡ Intel Optane
+- 🛠️ IPP Intel
+- 🔗 Intel MPI Library
+- 🧠 Intel OpenVINO
+
+#### ❓ FAQ Categories
+
+- 🛡️ Product Support FAQ
+- 📦 Product Installation FAQ
+- 🌐 General Intel Information
+
+## 🏃‍♂️ How to perform inference with the fine-tuned Intel OpenVINO Model?
+
+1. Install packages required for using [Optimum Intel](https://huggingface.co/docs/optimum/intel/index) integration with the OpenVINO backend:
+
+```
+pip install optimum[openvino]
+```
+
+2. Import and initialize the model from HuggingFace:
+
+```
+from transformers import AutoTokenizer
+from optimum.intel.openvino import OVModelForCausalLM
+
+model_name = "OjasPatil/intel-llama2-7b-ov"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+base_model = OVModelForCausalLM.from_pretrained(model_name)
+```
+
+3. Perform Inference with the OpenVINO Optimized Fine-tuned Intel Virutal Assistant:
+
+```
+message = "What is Intel OpenVINO?"
+prompt = f"[INST] {message} [/INST]"
+inputs = tokenizer(prompt, return_tensors="pt")
+outputs = base_model.generate(**inputs, max_new_tokens=50)
+response = tokenizer.decode(outputs[0], skip_special_tokens=True).replace(prompt+" ", "")
+print(response)
+```
+
+## 🌠 Results
+The OpenVINO IR Format Model performs **56% faster** than the original model.
+
+![Performance Comparison](https://github.com/user-attachments/assets/a672e14d-f935-4b4c-8845-48bf832a747f)
+
+<p align="center">
+  <em>Figure: Performance comparison between the OpenVINO IR Format Model and the original model.</em>
+</p>
+
+#### ROUGE Scores
+
+The performance of the model is also evaluated using ROUGE scores:
+
+- ROUGE-1: 35.23
+- ROUGE-2: 18.97
+- ROUGE-L: 28.82
+
+
+## :handshake: Team Aurora
 - **Harinee J**
 - **Mhanjhusriee Baskar**
-- **Amit**
-- **Ojas**
-
-### Project Components
-
-1. **Model Loading and Inference**:
-   - Utilizing the OVModelForCausalLM and AutoTokenizer from the Hugging Face Transformers library to load and run inference with a pre-trained model.
-   - Implementing a text generation pipeline to generate responses based on user prompts.
-
-2. **Model Fine-Tuning**:
-   - Fine-tuning a base model from the Hugging Face hub using the PEFT (Parameter-Efficient Fine-Tuning) approach with LoRA (Low-Rank Adaptation).
-   - Configuring the fine-tuning parameters, including learning rate, batch size, gradient accumulation steps, and more, to optimize the training process.
-   - Splitting the dataset into training and evaluation sets for model training and validation.
-
-3. **Model Evaluation**:
-   - Evaluating the fine-tuned model using the ROUGE metric to measure the quality of generated responses.
-   - Loading and processing datasets, generating responses for evaluation, and computing ROUGE scores to assess model performance.
-
-4. **Deployment and Integration**:
-   - Saving the fine-tuned model and tokenizer.
-   - Pushing the fine-tuned model to the Hugging Face hub for easy access and deployment.
-
-### Installation and Setup
-
-To get started with the Intel-QA-Chatbot project, you need to set up the required environment and dependencies. This includes installing necessary libraries such as `accelerate`, `peft`, `bitsandbytes`, `transformers`, and `trl`.
-
-### Contribution
-
-We welcome contributions to enhance and expand the functionality of this project. If you are interested in contributing, please follow the standard GitHub workflow:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make the necessary changes and commit them.
-4. Push your changes to your forked repository.
-5. Submit a pull request to the main repository.
-
-### License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-### Contact
-
-For any inquiries or further information, please contact Team Aurora:
-- **Harinee J**
-- **Mhanjhusriee Baskar**
-- **Amit**
-- **Ojas**
-
-This project highlights the capabilities of Intel AI Laptops and the OpenVINO™ toolkit in optimizing LLM inference and fine-tuning, providing a practical solution for running advanced AI models on Intel hardware.
+- **Amit Das**
+- **Ojas Patil**
