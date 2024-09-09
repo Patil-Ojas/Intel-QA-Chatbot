@@ -6,7 +6,7 @@ Running GenAI on Intel AI Laptops and Simple LLM Inference on CPU and fine-tunin
 ## :detective: Our Solution:
 -> Fine-tuned Llama2-7b model on Intel Products and Services FAQ custom Dataset.
 
--> Comverted to OpenVINO IR Format for optimized inferencing, being 56% faster than the original model.
+-> Comverted to OpenVINO IR Format for optimized inferencing, being **56% faster** than the original model.
 
 
 ## :tv: Demo ([Youtube](https://youtu.be/1fdKZiXexSU))
